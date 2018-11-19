@@ -11,9 +11,9 @@ let router = Router()
 /*
  Registers a handler for GET /hello that returns "Hello".
  As you can see, a route handler has three parameters:
- - The current request, from which you can read data.
- - The current response, which you can configure.
- - The next handler or middleware in the chain.
+ - The current `request`, from which you can read data.
+ - The current `response`, which you can configure.
+ - The `next` handler or middleware in the chain.
  Unless an error was thrown or you called `end()` on the response,
  your handler should end with `next()`.
  */
@@ -37,7 +37,7 @@ router.get("message") {
 
 /*
  Registers a route handler for POST /message that sets the current message.
- The new message is sent in the request body as a JSON object.
+ The new message is sent in the request body as a JSON object and parsed using `Codable`.
  */
 router.post("message") {
     request, response, next in
@@ -53,13 +53,12 @@ router.post("message") {
 /*
  Kitura can serve both static and dynamic web pages.
  This handler uses the Stencil template engine to render **Views/index.stencil**.
- The parameters used in the template are specified using a context dictionary.
- The next example will show higher-level rendering using `Codable` models.
+ The parameters used in the template are specified using a `Codable` (in this case a dictionary).
  */
 router.setDefault(templateEngine: StencilTemplateEngine())
 router.get("/") {
     request, response, next in
-    try response.render("index", context: ["message": message.text])
+    try response.render("index", with: ["message": message.text])
     next()
 }
 

@@ -1,16 +1,16 @@
-# iCapps Tech Talk
+# Server-side Swift workshop
 
-This repository contains the finished projects from the iCapps Tech Talk on May 23, 2018.
+This repository contains the finished "Fcats" projects.
 
 ## Prerequisites
 
-You will need the following to run the examples:
+You will need the following to run the projects:
 
-- Swift 4.1 from Xcode 9.3 or [swift.org](https://swift.org/download/)
+- Swift 4.2 from Xcode 10 or [swift.org](https://swift.org/download/)
 - MongoDB
 - CocoaPods
 
-I've also used the following tools during the talk. These are optional:
+I've also used the following tools during the workshop. These are optional:
 
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Stencil for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=svanimpe.stencil)
@@ -30,7 +30,7 @@ To recreate this example, first initialize an empty project using the Swift Pack
 ```
 mkdir Hello
 cd Hello
-swift package init --type=executable
+swift package init --type executable
 ```
 
 Then fill in **Package.swift** and generate an Xcode project:
@@ -41,7 +41,7 @@ swift package generate-xcodeproj
 
 Unfortunately, Xcode doesn't (yet) support the Swift Package Manager, so you'll have to regenerate the Xcode project every time you change **Package.swift**.
 
-After opening the Xcode project and before making any changes to the code, first build the project. This makes sure the dependencies are built and available to import. Then edit the current scheme, set the executable and run the app to make sure everything is working fine.
+After opening the Xcode project and before making any changes to the code, first build the project. This makes sure the dependencies are built and available to import. Then run the app to make sure everything is working fine.
 
 Now draw the rest of the owl.
 
