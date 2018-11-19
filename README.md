@@ -110,14 +110,9 @@ KituraKit's API mirrors Kitura's codable routing API, making it easy to call you
 
 - [Kitura's home page](https://www.kitura.io) is a good starting point to find documentation.
 - [Swift@IBM's Slack channel](http://slack.kitura.io/) is the best place to ask questions and get help.
-- [Swift@IBM's GitHub page](https://github.com/IBM-Swift/) is a good way to discover useful libraries.
 - [Stencil](https://github.com/stencilproject/Stencil) is Swift's most popular template language.
 - [Stencil for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=svanimpe.stencil) is a Visual Studio Code extension that adds syntax highlighting, autocompletion, snippets and indentation support for Stencil.
 - [MongoKitten](https://github.com/OpenKitten/MongoKitten) is an excellent Swift driver for MongoDB.
 - [KituraKit](https://github.com/IBM-Swift/KituraKit) is an iOS client library for Kitura.
 - [Swift Blog](https://github.com/svanimpe/swift-blog) is an example project to help you get started with Kitura and deploy your projects to IBM Cloud.
-- [Server-side Swift](https://www.serversideswift.info) is an upcoming conference focused exclusively on server-side Swift.
-
-If you have any questions, please find me on Twitter as [@svanimpe](https://twitter.com/svanimpe).
-
-If you enjoyed the talk and want to support my open source work, please consider [becoming a patron](https://www.patreon.com/svanimpe).
+- [Around The Table](https://github.com/svanimpe/around-the-table) is a full-scale server-side Swift project that has been open sourced and documented to serve as a case study.

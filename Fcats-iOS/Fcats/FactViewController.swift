@@ -11,11 +11,6 @@ class FactViewController: UIViewController {
     }
     
     @IBAction func randomFact() {
-        if !facts.isEmpty {
-            let index = Int(arc4random_uniform(UInt32(facts.count)))
-            factLabel.text = facts[index]
-        } else {
-            factLabel.text = "Little is known about these cats."
-        }
+        factLabel.text = facts.randomElement() ?? "Little is known about these cats."
     }
 }
