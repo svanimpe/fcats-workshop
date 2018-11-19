@@ -1,5 +1,3 @@
-import Foundation
-
 /**
  A view model for **fact.stencil**.
  
@@ -7,7 +5,7 @@ import Foundation
  These properties can be taken from multiple models.
  They can be transformed, localized, ... as needed for the view.
  
- This is ofcourse inspired by MVVM.
+ This is of course inspired by MVVM.
  */
 struct FactViewModel: Codable {
     
@@ -18,11 +16,6 @@ struct FactViewModel: Codable {
     init(race: Race) {
         id = race.id
         name = race.name
-        if !race.facts.isEmpty {
-            let index = Int(arc4random_uniform(UInt32(race.facts.count)))
-            fact = race.facts[index]
-        } else {
-            fact = "Little is known about these cats."
-        }
+        fact = race.facts.randomElement() ?? "Little is known about these cats."
     }
 }

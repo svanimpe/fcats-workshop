@@ -1,7 +1,7 @@
 import Kitura
 
 extension Routes {
-
+    
     /**
      Adds the web routes to the given router.
      */
@@ -15,10 +15,11 @@ extension Routes {
      
      Note how the rendering context is built. Instead of providing a dictionary,
      this handler provides an array of codables and attaches it to the key `races`.
-     This is an example of codable rendering, a feature that will be available in Kitura 2.4.
+     This is an example of codable rendering.
      */
     private func races(request: RouterRequest, response: RouterResponse, next: () -> Void) throws {
-        try response.render("index", with: persistence.races(startingFrom: 1, limitedTo: 10), forKey: "races")
+        let races = try persistence.races(startingFrom: 1, limitedTo: 10)
+        try response.render("index", with: races, forKey: "races")
         next()
     }
     
@@ -29,7 +30,7 @@ extension Routes {
      
      Like the previous handler, it also uses codable rendering.
      However, unlike the previous handler, it does not explicitly set a key.
-     As a result, the rendering context will directly contain the codable's properties.
+     As a result, the rendering context will contain the codable's properties.
      
      Finally, this handler renders a view model (instead of a regular model type).
      */

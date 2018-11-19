@@ -47,7 +47,7 @@ extension Race {
         guard let id = Int(bson["_id"]),
               let name = String(bson["name"]),
               let image = String(bson["image"]),
-              let facts = Array(bson["facts"])?.compactMap({ String($0) }) else {
+              let facts = Array(bson["facts"])?.compactMap(String.init) else {
             return nil
         }
         self.init(id: id, name: name, image: image)

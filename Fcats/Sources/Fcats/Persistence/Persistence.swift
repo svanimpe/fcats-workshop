@@ -14,6 +14,7 @@ public class Persistence {
     
     /**
      Initializes the persistence layer and connects to the database.
+     In a real app, you should load the database settings from environment variables.
      */
     public init() throws {
         let settings = try ClientSettings("mongodb://localhost:27017/")

@@ -57,16 +57,16 @@ The app is split into modules to allow for automated testing:
 
 - **Main** is an executable target and contains bootstrap code. It sets up a router and starts the server.
 - **Fcats** is a library containing all of the app's functionality.
-- **FcatsTests** is a test target for **Fcats**. An example end-to-end test is included.
+- **FcatsTests** is a test target for **Fcats**. Some example end-to-end tests are included.
 
-> **Note**: This app's architecture is a simplified version of the architecture for [Around The Table](https://github.com/svanimpe/around-the-table), which will be released later this year.
+> **Note**: This app's architecture is a simplified version of the architecture for [Around The Table](https://github.com/svanimpe/around-the-table), which is a full-scale server-side Swift project.
 
-To recreate this project, start by initializing an empty project:
+To recreate this example, start by initializing an empty project:
 
 ```
 mkdir Fcats
 cd Fcats
-swift package init --type=executable
+swift package init --type executable
 ```
 
 Before creating an Xcode project, first set up the modules. A **keep.swift** file is added to empty modules so these modules get included in the Xcode project. You can remove these files once you've added actual source files.
@@ -75,7 +75,8 @@ Before creating an Xcode project, first set up the modules. A **keep.swift** fil
 mkdir Sources/Main
 mv Sources/Fcats/main.swift Sources/Main/
 touch Sources/Fcats/keep.swift
-mkdir Tests/FcatsTests
+rm -rf Tests
+mkdir -p Tests/FcatsTests
 touch Tests/FcatsTests/keep.swift
 ```
 
@@ -85,7 +86,7 @@ Now fill in **Package.swift** and generate an Xcode project:
 swift package generate-xcodeproj
 ```
 
-As before, first build the project, then set the executable and run the app to make sure everything is working fine.
+First build the project, then select the executable from the scheme menu and run the app to make sure everything is working fine.
 
 You can now add the remaining sources. You'll also need to copy over the **public** and **Views** directories.
 

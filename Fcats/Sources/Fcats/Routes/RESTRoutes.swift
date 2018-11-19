@@ -2,7 +2,7 @@ import Kitura
 import KituraContracts
 
 /**
- Query parameters used for paged requests.
+ Query parameters for paged requests.
  */
 struct Page: QueryParams {
     
@@ -15,13 +15,12 @@ struct Page: QueryParams {
 
 extension Routes {
     
-    
     /**
-     Adds the REST routes to the given router.
+     Adds the REST API routes to the given router.
      
      These routes are examples of codable routing.
      With codable routing, Kitura handles the request and response for you.
-     Your handler simply receives and returns a Codable (or an error).
+     Your handler simply receives and returns a `Codable` (or an error).
      All codable handlers are asynchronous so they return their result via a completion handler.
      */
     func configureRESTRoutes(using router: Router) {
@@ -52,7 +51,7 @@ extension Routes {
      Returns the `Race` with the given ID, or an error.
      
      Because this handler includes an identifier parameter, Kitura automatically adds
-     an :id route parameter. The complete route for this handler is /api/race/:id.
+     an :id route parameter. The complete route for this handler is /api/races/:id.
      */
     private func getOne(id: Int, completion: (Race?, RequestError?) -> Void) {
         do {
@@ -72,7 +71,7 @@ extension Routes {
      Decoding these parameters is, as always, done via `Codable`.
      
      Because the properties of `Page` are non-optional, the query parameters are required.
-     The complete route for this handler is /api/races/?first=x&size=y.
+     The complete route for this handler is /api/races?first=x&size=y.
      */
     private func getAll(page: Page, completion: ([Race]?, RequestError?) -> Void) {
         do {

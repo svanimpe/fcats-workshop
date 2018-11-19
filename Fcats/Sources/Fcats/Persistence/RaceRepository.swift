@@ -44,6 +44,6 @@ extension Persistence {
             .match("_id" >= start), // equivalent to `["_id": ["$gte": start]]`
             .sort(["_id": .ascending]),
             .limit(limit)
-        ]).compactMap { Race(bson: $0) }
+        ]).compactMap(Race.init(bson:))
     }
 }
