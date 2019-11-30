@@ -1,3 +1,5 @@
+import Dispatch
+import KituraContracts
 import KituraKit
 
 /**
@@ -6,22 +8,15 @@ import KituraKit
  */
 class KituraService {
     
-    private struct Page: QueryParams {
-        let first: Int
-        let size: Int
-    }
-    
     let url = "http://localhost:8080"
-    
     private let client: KituraKit
     
     init() {
         client = KituraKit(baseURL: url + "/api")!
     }
     
-    func getRaces(from first: Int, limitedTo size: Int, completion: @escaping ([Race]) -> Void) {
-        client.get("races", query: Page(first: first, size: size)) {
-            (races: [Race]?, error: RequestError?) in
+    func getRaces(completion: @escaping ([Race]) -> Void) {
+        client.get("races") { (races: [Race]?, error: RequestError?) in
             DispatchQueue.main.async {
                 completion(races ?? [])
             }

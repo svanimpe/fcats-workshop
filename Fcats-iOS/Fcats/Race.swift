@@ -12,10 +12,3 @@ class Race: Codable {
         facts = []
     }
 }
-
-extension Race: Equatable {
-    
-    static func ==(lhs: Race, rhs: Race) -> Bool {
-        return lhs.id == rhs.id
-    }
-}

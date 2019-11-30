@@ -9,8 +9,7 @@ class RacesViewController: UIViewController {
     private var races: [Race] = []
     
     override func viewDidLoad() {
-        kitura.getRaces(from: 0, limitedTo: 10) {
-            races in
+        kitura.getRaces { races in
             self.races = races
             self.tableView.reloadData()
         }
@@ -27,7 +26,7 @@ class RacesViewController: UIViewController {
 extension RacesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return races.count
+        races.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

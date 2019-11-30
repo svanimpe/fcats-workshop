@@ -1,5 +1,6 @@
 .DS_Store
 .build
+.swiftpm
 Package.resolved
 *.xcodeproj
 !/Fcats-iOS/Fcats.xcodeproj

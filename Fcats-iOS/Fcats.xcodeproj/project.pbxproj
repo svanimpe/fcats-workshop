@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23DA0EB22D69499233015984 /* Pods_Fcats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FD2052ED0FE2B4FE831C71 /* Pods_Fcats.framework */; };
+		4DC711232392F584003C4465 /* KituraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4DC711222392F584003C4465 /* KituraKit */; };
 		B019410620B48C0200A4D49D /* KituraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019410520B48C0200A4D49D /* KituraService.swift */; };
 		B019410820B48C1900A4D49D /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019410720B48C1900A4D49D /* Race.swift */; };
 		B019410A20B48D9100A4D49D /* RacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019410920B48D9100A4D49D /* RacesViewController.swift */; };
@@ -19,9 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		08FD2052ED0FE2B4FE831C71 /* Pods_Fcats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fcats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E8D54C5EAD8280953334128 /* Pods-Fcats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fcats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fcats/Pods-Fcats.debug.xcconfig"; sourceTree = "<group>"; };
-		9FEAB09FF27210A4F8964E39 /* Pods-Fcats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fcats.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fcats/Pods-Fcats.release.xcconfig"; sourceTree = "<group>"; };
 		B019410520B48C0200A4D49D /* KituraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KituraService.swift; sourceTree = "<group>"; };
 		B019410720B48C1900A4D49D /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		B019410920B48D9100A4D49D /* RacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesViewController.swift; sourceTree = "<group>"; };
@@ -39,37 +36,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23DA0EB22D69499233015984 /* Pods_Fcats.framework in Frameworks */,
+				4DC711232392F584003C4465 /* KituraKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D10BC21263BCE28B368D9DE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4E8D54C5EAD8280953334128 /* Pods-Fcats.debug.xcconfig */,
-				9FEAB09FF27210A4F8964E39 /* Pods-Fcats.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		75A39A26462B8E84A57C8221 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				08FD2052ED0FE2B4FE831C71 /* Pods_Fcats.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B0A612CC20ADC65A008158EA = {
 			isa = PBXGroup;
 			children = (
 				B0A612D720ADC65A008158EA /* Fcats */,
 				B0A612D620ADC65A008158EA /* Products */,
-				3D10BC21263BCE28B368D9DE /* Pods */,
-				75A39A26462B8E84A57C8221 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,17 +82,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0A612E720ADC65C008158EA /* Build configuration list for PBXNativeTarget "Fcats" */;
 			buildPhases = (
-				A0F88C53BA7854EA0D573A30 /* [CP] Check Pods Manifest.lock */,
 				B0A612D120ADC65A008158EA /* Sources */,
 				B0A612D220ADC65A008158EA /* Frameworks */,
 				B0A612D320ADC65A008158EA /* Resources */,
-				F8CE5B7831FE615A93BB3735 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Fcats;
+			packageProductDependencies = (
+				4DC711222392F584003C4465 /* KituraKit */,
+			);
 			productName = Fcats;
 			productReference = B0A612D520ADC65A008158EA /* Fcats.app */;
 			productType = "com.apple.product-type.application";
@@ -131,7 +110,7 @@
 				TargetAttributes = {
 					B0A612D420ADC65A008158EA = {
 						CreatedOnToolsVersion = 9.3.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -144,6 +123,9 @@
 				Base,
 			);
 			mainGroup = B0A612CC20ADC65A008158EA;
+			packageReferences = (
+				4DC711212392F584003C4465 /* XCRemoteSwiftPackageReference "KituraKit" */,
+			);
 			productRefGroup = B0A612D620ADC65A008158EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,45 +147,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A0F88C53BA7854EA0D573A30 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Fcats-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8CE5B7831FE615A93BB3735 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Fcats/Pods-Fcats-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/KituraKit/KituraKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fcats/Pods-Fcats-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0A612D120ADC65A008158EA /* Sources */ = {
@@ -291,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -356,7 +299,6 @@
 		};
 		B0A612E820ADC65C008158EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E8D54C5EAD8280953334128 /* Pods-Fcats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,14 +309,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.svanimpe.Fcats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		B0A612E920ADC65C008158EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FEAB09FF27210A4F8964E39 /* Pods-Fcats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -385,7 +326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.svanimpe.Fcats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -412,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4DC711212392F584003C4465 /* XCRemoteSwiftPackageReference "KituraKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/KituraKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4DC711222392F584003C4465 /* KituraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DC711212392F584003C4465 /* XCRemoteSwiftPackageReference "KituraKit" */;
+			productName = KituraKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0A612CD20ADC65A008158EA /* Project object */;
 }

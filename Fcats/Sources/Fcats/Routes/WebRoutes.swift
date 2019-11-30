@@ -18,7 +18,7 @@ extension Routes {
      This is an example of codable rendering.
      */
     private func races(request: RouterRequest, response: RouterResponse, next: () -> Void) throws {
-        let races = try persistence.races(startingFrom: 1, limitedTo: 10)
+        let races = try persistence.allRaces()
         try response.render("index", with: races, forKey: "races")
         next()
     }

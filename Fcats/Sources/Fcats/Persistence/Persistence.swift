@@ -1,4 +1,4 @@
-import MongoKitten
+import MongoSwift
 
 /**
  This class represents the persistence layer.
@@ -10,16 +10,17 @@ import MongoKitten
  */
 public class Persistence {
     
-    let races: MongoKitten.Collection
+    let raceCollection: MongoCollection<Race>
     
     /**
      Initializes the persistence layer and connects to the database.
+     
      In a real app, you should load the database settings from environment variables.
+     That will also allow you to use separate database for testing.
      */
     public init() throws {
-        let settings = try ClientSettings("mongodb://localhost:27017/")
-        let server = try Server(settings)
-        let database = server["fcats"]
-        races = database["races"]
+        let client = try MongoClient()
+        let database = client.db("fcats")
+        raceCollection = database.collection("races", withType: Race.self)
     }
 }

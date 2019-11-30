@@ -23,6 +23,10 @@ router.get("hello") {
     next()
 }
 
+/*
+ Stores the current message.
+ (This example doesn't use a database yet).
+ */
 private var message = Message(text: "Hello")
 
 /*
@@ -53,7 +57,7 @@ router.post("message") {
 /*
  Kitura can serve both static and dynamic web pages.
  This handler uses the Stencil template engine to render **Views/index.stencil**.
- The parameters used in the template are specified using a `Codable` (in this case a dictionary).
+ The parameters used in the template are specified using a `Codable` instance (in this case a dictionary).
  */
 router.setDefault(templateEngine: StencilTemplateEngine())
 router.get("/") {
